@@ -318,11 +318,6 @@ header nav .menu {
   gap: 30px;
   transition: var(--main-transition)
 }
-.services .container:hover > .card:not(:hover) {
-  opacity: .5;
-  filter: blur(5px);
-  transform: scale(.9)
-}
 .services .container .card {
   flex-basis: 300px;
   flex-grow: 1;
@@ -332,10 +327,6 @@ header nav .menu {
   border-radius: 10px;
   box-shadow: 0 0 15px var(--main-color);
   transition: var(--main-transition);
-}
-.services .container .card:hover {
-  transform: scale(1.1);
-  box-shadow: none;
 }
 .services .container .card i {
   color: var(--main-color);
