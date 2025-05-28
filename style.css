@@ -328,6 +328,10 @@ header nav .menu {
   box-shadow: 0 0 15px var(--main-color);
   transition: var(--main-transition);
 }
+.services .container .card:hover {
+  background-color: var(--main-color);
+  color: #fff
+}
 .services .container .card i {
   color: var(--main-color);
   font-size: 3.5rem;
