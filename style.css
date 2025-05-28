@@ -319,22 +319,41 @@ header nav .menu {
   transition: var(--main-transition)
 }
 .services .container .card {
+  position: relative;
   flex-basis: 300px;
   flex-grow: 1;
   background-color: #fffffe;
   text-align: center;
   padding: 20px;
   border-radius: 10px;
+  overflow: hidden;
   box-shadow: 0 0 15px var(--main-color);
-  transition: var(--main-transition);
+  z-index: 1;
 }
-.services .container .card:hover {
+.services .container .card::after {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 0%;
+  height: 0%;
   background-color: var(--main-color);
-  color: #fff
+  border-radius: 10px;
+  transition: var(--main-transition);
+  z-index: -1;
+}
+.services .container .card:hover::after {
+  width: 100%;
+  height: 100%;
 }
 .services .container .card i {
   color: var(--main-color);
+  transition: var(--main-transition);
   font-size: 3.5rem;
+}
+.services .container .card:hover i {
+  color: white;
 }
 .services .container .card .text {
   margin-top: 20px;
@@ -346,7 +365,11 @@ header nav .menu {
 }
 .services .container .card .text p {
   color: #2e2f3e;
-  line-height: var(--line-height)
+  line-height: var(--line-height);
+  transition: var(--main-transition);
+}
+.services .container .card:hover .text p {
+  color: #fff
 }
 .projects {
   padding-top: var(--padding-top);
@@ -432,12 +455,8 @@ header nav .menu {
   gap: 50px;
   transition: var(--main-transition)
 }
-.contact .container:hover > .card:not(:hover) {
-  opacity: .5;
-  filter: blur(5px);
-  transform: scale(.9)
-}
 .contact .container .card {
+  position: relative;
   flex-basis: 300px;
   flex-grow: 1;
   background-color: #fff;
@@ -446,18 +465,42 @@ header nav .menu {
   border-radius: 10px;
   box-shadow: 0 0 15px var(--main-color);
   transition: var(--main-transition);
+  z-index: 1;
+}
+.contact .container .card::after {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 0%;
+  height: 0%;
+  background-color: var(--main-color);
+  border-radius: 10px;
+  transition: var(--main-transition);
+  z-index: -1;
+}
+.contact .container .card:hover::after {
+  width: 100%;
+  height: 100%;
 }
 .contact .container .card i {
   color: var(--main-color);
   font-size: 3.5rem;
+  transition: var(--main-transition)
 }
-.contact .container .card:hover {
-  transform: scale(1.1);
-  box-shadow: none;
+.contact .container .card:hover i {
+  color: #fff
 }
 .contact .container .card .text h3 {
   margin: 10px 0;
   font-weight: bold;
+}
+.contact .container .card .text P {
+  transition: var(--main-transition)
+}
+.contact .container .card:hover .text P {
+  color: #fff
 }
 footer {
   padding: 10px 0;
