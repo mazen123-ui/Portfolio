@@ -167,7 +167,7 @@ header nav .menu {
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 .home .container .text {
